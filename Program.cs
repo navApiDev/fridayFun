@@ -17,19 +17,19 @@ namespace ConsoleApplication1
 
         private static int minimumNumberOfCuts(int stickLength)
         {
-            double x = 2;
+            int x = 0;
             int n = 1;
             do
             {
-                x = Math.Pow(x,2);
+                x = stickLength / (stickLength / (int)Math.Pow(2, n));
                 n++;
-            } while (x <= stickLength);
+            } while (x < stickLength);
             if (stickLength % n > 0)
             {
                 n++;
             }
 
-            return n;
+            return n-1;
         }
     }
 }
